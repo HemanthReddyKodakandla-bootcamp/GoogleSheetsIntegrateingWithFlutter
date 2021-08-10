@@ -2,7 +2,7 @@
 
 A Demo application which stores User feedback from Flutter application into Google Sheets using Google AppScript.
 
-##Introduction
+## Introduction
 
 - [Google Sheets](https://docs.google.com/spreadsheets/u/0/) is a very powerful tool 🔥 if we look into deep in it.
 
@@ -14,6 +14,8 @@ A Demo application which stores User feedback from Flutter application into Goog
 
 - In other screen, we'll show feedback responses fetched from Google sheets into the List.
 
+##
+
 - A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
@@ -24,11 +26,12 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-##⚡️ Project Files
+## ⚡️ Project Files
 
 - [Flutter Application](https://github.com/HemanthReddyKodakandla-bootcamp/GoogleSheetsIntegrateingWithFlutter) - Flutter Application Code.
 
-- [AppScript Code]() - Google AppScript code to deploy as Web app for interface between Flutter app and Google sheet.
-What's Happening? 🤔
+- [AppScript Code](https://github.com/HemanthReddyKodakandla-bootcamp/GoogleSheetsIntegrateingWithFlutter/blob/master/code.gs) - Google AppScript code to deploy as Web app for interface between Flutter app and Google sheet.
+
+## What's Happening? 🤔
 
 In flutter, when submit button is pressed, HTTP POST request is called on AppScript URL which retireves parameter from request and then appends row data in Google Sheets. Thus, data from flutter in inserted into Google Sheets. When GET request is sent to the same URL, it returns the List of feedback responses.
