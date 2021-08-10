@@ -1,6 +1,8 @@
 # flutter_app_script_example
 
-A Demo application which stores User feedback from # Flutter # application into # Google Sheets using # Google AppScript.
+A Demo application which stores User feedback from **Flutter Application** into **Google Sheets** using **Google AppScript**.
+
+![](https://github.com/PatilShreyas/Flutter2GoogleSheets-Demo/blob/master/images/banner.png)
 
 ## Introduction
 
