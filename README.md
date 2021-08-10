@@ -24,7 +24,7 @@ A Demo application which stores User feedback from **Flutter Application** into 
   
 - Setup **Header Columns** of sheet and you’ll see like this.
 
-![](/2021-08-10%2019_07_16-Flutter%20Demo.png)
+![](/images/2021-08-10%2019_07_16-Flutter%20Demo.png)
 
 As above, I’ve set up header columns of the sheet. You can see I’ve highlighted part of the `URL`. It is the **Sheet ID** of our current document. Just copy it, we’ll require it in the next step. Every document has a unique **Sheet ID**.
 
@@ -36,7 +36,7 @@ As above, I’ve set up header columns of the sheet. You can see I’ve highligh
 
 - After the above steps, you’ll see AppScript Editor will be launched in the New Tab of your browser. You’ll see Code window like below.
 
-![](2021-08-10%2019_11_53-Untitled%20project%20-%20Project%20Editor.png)
+![](/images/2021-08-10%2019_11_53-Untitled%20project%20-%20Project%20Editor.png)
 
 Here in this editor, we have to write AppScript which will act as a Web API and that will communicate with Google sheets.
 
@@ -77,29 +77,29 @@ Here, we’ll retrieve parameters using `request.parameter` . Finally, by using 
 
 - Select from Button, **Deploy → New Deployment**
 
-![](2021-08-10%2019_25_03-Settings.png)
+![](/images/2021-08-10%2019_25_03-Settings.png)
 
 It will show a pop-up like below, Click on **Select type → Web App**
 
-![](2021-08-10%2019_28_18-Untitled%20project.png)
+![](/images/2021-08-10%2019_28_18-Untitled%20project.png)
 
 - You’ll see a window like this, Just ensure that select **‘Execute the app’** as **‘Me’**.
 
-![](2021-08-10%2019_30_28-Untitled%20project.png)
+![](/images/2021-08-10%2019_30_28-Untitled%20project.png)
 
 - Select **‘Who has access to the app’** as **‘Anyone’**
 
-![](2021-08-10%2019_33_07-Untitled%20project.png)
+![](/images/2021-08-10%2019_33_07-Untitled%20project.png)
 
 - Authorization is required! Just review permissions. Then select your Google Account.
 
 - **Allow** these permissions and then you’re done!
 
-![](2021-08-10%2019_42_23.png)
+![](/images/2021-08-10%2019_42_23.png)
 
 - Finally, you’ll get a window like this with the **Web app URL**. Copy that **`Web URL`** for a reference. We’ll use this `URL` for making `HTTP` `GET` requests from our flutter app.
 
-![](2021-08-10%2019_33_57-Untitled%20project.png)
+![](/images/2021-08-10%2019_33_57-Untitled%20project.png)
 
 😃We’ve done this part. Let’s see Flutter implementation.
 
@@ -187,9 +187,9 @@ In flutter, when submit button is pressed, `HTTP` `POST` request is called on Ap
 
 ## ⚡️ Results
 
-![](/Screenshot_20210810-185059.jpg)
-![](/Screenshot_20210810-200121.jpg)
+![](/images/Screenshot_20210810-185059.jpg)
+![](/images/Screenshot_20210810-200121.jpg)
 
 # Google Sheet Preview::
 
-![](/2021-08-10%2019_02_10-Flutter%20App%20Script%20POC.png)
+![](/images/2021-08-10%2019_02_10-Flutter%20App%20Script%20POC.png)
