@@ -1,3 +1,5 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_script_example/controllers/appScript_controller.dart';
 
@@ -25,6 +27,7 @@ class _FeedBackDataViewState extends State<FeedBackDataView> {
       appBar: AppBar(
         title: Text("FeedBack View"),
         centerTitle: true,
+        backgroundColor: Colors.deepPurple,
       ),
       body: Column(
         children: [
@@ -43,13 +46,36 @@ class _FeedBackDataViewState extends State<FeedBackDataView> {
                   ),
                 );
               }else{
-                return Center(child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 8.0),
-                  child: LinearProgressIndicator(
-                    backgroundColor: Colors.deepPurple,
-                    color: Colors.yellow,
-                  ),
-                ));
+                return Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 8.0),
+                      child: LinearProgressIndicator(
+                        backgroundColor: Colors.deepPurple,
+                        color: Colors.yellow,
+                      ),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.4,
+                    ),
+                    DefaultTextStyle(
+                      style: const TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.deepPurple
+                      ),
+                      child: AnimatedTextKit(
+                        animatedTexts: [
+                          WavyAnimatedText('Getting Data...'),
+                          WavyAnimatedText('Please Wait...'),
+                        ],
+                        isRepeatingAnimation: true,
+                        onTap: () {
+                          print("Tap Event");
+                        },
+                      ),
+                    )
+                  ],
+                );
               }
             },
           )
