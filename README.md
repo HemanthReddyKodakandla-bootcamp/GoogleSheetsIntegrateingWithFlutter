@@ -26,13 +26,13 @@ A Demo application which stores User feedback from **Flutter Application** into 
 
 ![](/2021-08-10%2019_07_16-Flutter%20Demo.png)
 
-As above, I’ve set up header columns of the sheet. You can see I’ve highlighted part of the URL. It is the Sheet ID of our current document. Just copy it, we’ll require it in the next step. Every document has a unique Sheet ID.
+As above, I’ve set up header columns of the sheet. You can see I’ve highlighted part of the `URL`. It is the **Sheet ID** of our current document. Just copy it, we’ll require it in the next step. Every document has a unique **Sheet ID**.
 
-- As in below Image, Just go to Tools → Script Editor.
+- As in below Image, Just go to **Tools → Script Editor**.
 
 ![](https://miro.medium.com/max/806/1*9xO-QU68b9eXuZ5W7erzww.png)
 
-##⚡️ Setting up Google AppScript:
+## ⚡️ Setting up Google AppScript:
 
 - After the above steps, you’ll see AppScript Editor will be launched in the New Tab of your browser. You’ll see Code window like below.
 
@@ -40,7 +40,7 @@ As above, I’ve set up header columns of the sheet. You can see I’ve highligh
 
 Here in this editor, we have to write AppScript which will act as a Web API and that will communicate with Google sheets.
 
-We’ll write code in doPost() which will be invoked when HTTP request using method POST is sent.
+We’ll write code in `doPost()` which will be invoked when `HTTP` request using method `POST` is sent.
 
 ```
 function doPost(request){
@@ -73,21 +73,21 @@ First of all, we’ll have to Open our spreadsheet, we can open that using `Spre
 
 **Sheet ID** which we’ve copied in the previous step has to be passed in this method.
 
-Here, we’ll retrieve parameters using `request.parameter` . Finally, by using a method `appendRow([])` , we’ll insert feedback data into Google Sheet. In the end, we’ll return a JSON response with status: `**SUCCESS/FAILED**`.
+Here, we’ll retrieve parameters using `request.parameter` . Finally, by using a method `appendRow([])` , we’ll insert feedback data into Google Sheet. In the end, we’ll return a JSON response with status: **`SUCCESS/FAILED`**.
 
 - Select from Button, **Deploy → New Deployment**
 
 ![](2021-08-10%2019_25_03-Settings.png)
 
-It will show a pop-up like below, Click on Select type → Web App
+It will show a pop-up like below, Click on **Select type → Web App**
 
 ![](2021-08-10%2019_28_18-Untitled%20project.png)
 
-- You’ll see a window like this, Just ensure that select ‘Execute the app’ as ‘Me’.
+- You’ll see a window like this, Just ensure that select **‘Execute the app’** as **‘Me’**.
 
 ![](2021-08-10%2019_30_28-Untitled%20project.png)
 
-- Select ‘Who has access to the app’ as ‘Anyone’
+- Select **‘Who has access to the app’** as **‘Anyone’**
 
 ![](2021-08-10%2019_33_07-Untitled%20project.png)
 
@@ -188,7 +188,7 @@ In flutter, when submit button is pressed, `HTTP` `POST` request is called on Ap
 ## ⚡️ Results
 
 ![](/Screenshot_20210810-185059.jpg)
-![](/Screenshot_20210810-185112.jpg)
+![](/Screenshot_20210810-200121.jpg)
 
 # Google Sheet Preview::
 
