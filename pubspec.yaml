@@ -25,6 +25,9 @@ dependencies:
     sdk: flutter
   http: ^0.13.3
   animated_text_kit: ^4.2.1
+  getwidget: ^2.0.3
+  gsheets: ^0.3.1
+  rxdart: ^0.27.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

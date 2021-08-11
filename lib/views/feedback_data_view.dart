@@ -1,9 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app_script_example/controllers/appScript_controller.dart';
+import '../controllers/appScript_controller.dart';
 
-import 'modals/list_view_modal.dart';
+import '../modals/list_view_modal.dart';
 
 
 class FeedBackDataView extends StatefulWidget {

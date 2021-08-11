@@ -1,7 +1,6 @@
 import 'dart:convert' as convert;
-import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:flutter_app_script_example/modals/list_view_modal.dart';
+
+import '../modals/list_view_modal.dart';
 import 'package:http/http.dart' as http;
 
 class AppScriptController {
