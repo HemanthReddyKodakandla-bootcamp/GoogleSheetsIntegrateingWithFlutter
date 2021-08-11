@@ -163,7 +163,7 @@ Here’s a quick ⚡️ explanation for the above script:
 
 ##
 
-## ⚡️ Accessing Google Sheets Using **[gsheets]**(https://pub.dev/packages/gsheets) Package:
+## ⚡️ Accessing Google Sheets Using [**gsheets**](https://pub.dev/packages/gsheets) Package:
 
 - Check Example below:
 
@@ -292,7 +292,7 @@ void main() async {
 }
 ```
 
-- If you don't know where to find the credentials, i recommend you to read following article **[How To Get Credentials for Google Sheets]**(https://medium.com/@a.marenkov/how-to-get-credentials-for-google-sheets-456b7e88c430).
+- If you don't know where to find the credentials, i recommend you to read following article [**How To Get Credentials for Google Sheets**](https://medium.com/@a.marenkov/how-to-get-credentials-for-google-sheets-456b7e88c430).
 
 ##
 
