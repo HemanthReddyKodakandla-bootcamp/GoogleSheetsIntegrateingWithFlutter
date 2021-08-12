@@ -19,6 +19,8 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController? _ageController;
   TextEditingController? _emailController;
 
+  final formKey = GlobalKey<FormState>();
+
   @override
   void initState() {
     // TODO: implement initState
@@ -40,13 +42,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   saveForm() async{
     FocusManager.instance.primaryFocus!.unfocus();
-    Map formData = {
-      "name": _nameController!.text,
-      "email": _emailController!.text,
-      "mobileNo": _mobileNumberController!.text,
-      "age": _ageController!.text
-    };
-    AppScriptController().saveForm(formData, callback);
+    final form = formKey.currentState;
+
+    final isValid = form!.validate();
+    if(isValid) {
+      Map formData = {
+        "name": _nameController!.text,
+        "email": _emailController!.text,
+        "mobileNo": _mobileNumberController!.text,
+        "age": _ageController!.text
+      };
+      AppScriptController().saveForm(formData, callback);
+    }
   }
 
 
@@ -87,39 +94,46 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: ListView(
-              children: <Widget>[
-                SizedBox(height: 32.0,),
-                GetTextWidget(text: "Name"),
-                GetTextFormFieldWidget.getTextFormField(formFieldController: _nameController,keyboardType: TextInputType.text,hintText: "Enter Name Here",),
-                GetTextWidget(text: "Mobile Number"),
-                GetTextFormFieldWidget.getTextFormField(formFieldController: _mobileNumberController,keyboardType: TextInputType.numberWithOptions(),hintText: "Enter Mobile Number Here",),
-                GetTextWidget(text: "Age"),
-                GetTextFormFieldWidget.getTextFormField(formFieldController: _ageController,keyboardType: TextInputType.numberWithOptions(),hintText: "Enter Age Here",),
-                GetTextWidget(text: "Email"),
-                GetTextFormFieldWidget.getTextFormField(formFieldController: _emailController,keyboardType: TextInputType.emailAddress,hintText: "Enter Email Here",),
-                SizedBox(height: 32,),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: ElevatedButton(onPressed: saveForm, child: Text("Save Data"),style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 0.0,vertical: 12.0),
-                      primary: Colors.deepPurple,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))
-                  )),
-                ),
-                SizedBox(height: 16,),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: ElevatedButton(onPressed: (){
-                    FocusManager.instance.primaryFocus!.unfocus();
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => FeedBackDataView()));
-                  }, child: Text("Get Data"),style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 0.0,vertical: 12.0),
-                      primary: Colors.deepPurple,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))
-                  )),
-                )
-              ],
+            child: Form(
+              key: formKey,
+              child: ListView(
+                children: <Widget>[
+                  SizedBox(height: 32.0,),
+                  GetTextWidget(text: "Name"),
+                  GetTextFormFieldWidget.getTextFormField(formFieldController: _nameController,keyboardType: TextInputType.text,hintText: "Enter Name Here",
+                      validator: (value) => value != null && value.isEmpty ? "Enter name":null),
+                  GetTextWidget(text: "Mobile Number"),
+                  GetTextFormFieldWidget.getTextFormField(formFieldController: _mobileNumberController,keyboardType: TextInputType.numberWithOptions(),hintText: "Enter Mobile Number Here",
+                      validator: (value) => ((value != null && value.isEmpty)&& (value.length >9 &&value.length<12) )? "Enter Mobile Number": null),
+                  GetTextWidget(text: "Age"),
+                  GetTextFormFieldWidget.getTextFormField(formFieldController: _ageController,keyboardType: TextInputType.numberWithOptions(),hintText: "Enter Age Here",
+                      validator: (value) => value != null && value.isEmpty ? "Enter Age":null),
+                  GetTextWidget(text: "Email"),
+                  GetTextFormFieldWidget.getTextFormField(formFieldController: _emailController,keyboardType: TextInputType.emailAddress,hintText: "Enter Email Here",
+                      validator: (value) => value != null && !value.contains("@") ? "Enter Email":null),
+                  SizedBox(height: 32,),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: ElevatedButton(onPressed: saveForm, child: Text("Save User"),style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 0.0,vertical: 12.0),
+                        primary: Colors.deepPurple,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))
+                    )),
+                  ),
+                  SizedBox(height: 16,),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: ElevatedButton(onPressed: (){
+                      FocusManager.instance.primaryFocus!.unfocus();
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => FeedBackDataView()));
+                    }, child: Text("Get Users"),style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 0.0,vertical: 12.0),
+                        primary: Colors.deepPurple,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))
+                    )),
+                  )
+                ],
+              ),
             ),
           ),
         ),

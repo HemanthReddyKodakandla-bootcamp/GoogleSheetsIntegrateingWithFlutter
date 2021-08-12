@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_app_script_example/modals/user_fields.dart';
+import '../modals/user_fields.dart';
 
 List<UserDataMModal> userDataMModalFromMap(String str) => List<UserDataMModal>.from(json.decode(str).map((x) => UserDataMModal.fromMap(x)));
 

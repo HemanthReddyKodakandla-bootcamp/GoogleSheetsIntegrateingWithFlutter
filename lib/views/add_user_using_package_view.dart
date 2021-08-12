@@ -109,7 +109,7 @@ class _AddDataUsingPackageViewState extends State<AddDataUsingPackageView> {
                       child: ElevatedButton(onPressed: () async{
                         FocusManager.instance.primaryFocus!.unfocus();
                         saveForm();
-                      }, child: Text("Save Data"),style: ElevatedButton.styleFrom(
+                      }, child: Text("Save User"),style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(horizontal: 0.0,vertical: 12.0),
                           primary: Colors.deepPurple,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))
@@ -121,7 +121,7 @@ class _AddDataUsingPackageViewState extends State<AddDataUsingPackageView> {
                       child: ElevatedButton(onPressed: (){
                         FocusManager.instance.primaryFocus!.unfocus();
                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => UserView()));
-                      }, child: Text("View User"),style: ElevatedButton.styleFrom(
+                      }, child: Text("View Users"),style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(horizontal: 0.0,vertical: 12.0),
                           primary: Colors.deepPurple,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))
